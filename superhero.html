@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Супергерои</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-display">
+            <img src="images/superhero1.jpg" alt="Супергерой" id="currentHero">
+        </div>
+        <div class="button-panel">
+            <div class="button" data-hero="images/superhero1.jpg">Супергерой 1</div>
+            <div class="button" data-hero="images/superhero2.jpg">Супергерой 2</div>
+            <div class="button" data-hero="images/superhero3.jpg">Супергерой 3</div>
+            <div class="button" data-hero="images/superhero4.jpg">Супергерой 4</div>
+            <div class="button" data-hero="images/superhero5.jpg">Супергерой 5</div>
+        </div>
+    </div>
 
+    <script>
+        // Получаем все кнопки и текущее изображение супергероя
+        const buttons = document.querySelectorAll('.button');
+        const currentHero = document.getElementById('currentHero');
+
+        // Добавляем обработчик события на каждую кнопку
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                const newHeroImage = button.getAttribute('data-hero');
+                currentHero.src = newHeroImage; // Изменяем изображение супергероя
+            });
+        });
+    </script>
+</body>
+</html>
